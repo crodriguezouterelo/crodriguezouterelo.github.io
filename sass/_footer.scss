@@ -1,0 +1,60 @@
+footer {
+  background-color: $azulMedio;
+  text-align: left;
+
+  //referenciamos exclusivamente los hijos de parentesco directo
+  nav > ul {
+    @extend %xflex;
+    width: $mainWidth; //otorgamos una anchura al elemento
+    margin: 0 auto; //tras definir una anchura, centramos el elemento
+
+    //mismo concepto de parentesco aplicado previamente
+    > li {
+      width: $col4Width; //alineamos las columnas con las imágenes superiores
+    }
+  }
+
+  li {
+    margin-bottom: 6px; //espaciamos dichos elementos
+  }
+
+  //Los títulos de las listas navegables
+  h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    margin: 30px 0 10px;
+  }
+
+  //Los enlaces
+  a {
+    color: white;
+    font-size: 13.5px;
+  }
+
+  a:hover {
+    color: $azulOscuro;
+    @include coolShadow($azulClaro);
+    @include transition(0.05s);
+  }
+
+  //El pie del pie de página
+  div {
+    background-color: $azulOscuro;
+    margin-top: 18px; //distancia de este segundo pie para con las listas superiores
+    padding: 11px 0; //espaciamiento vertical para con el texto
+  }
+
+  //Texto final del documento página
+  p {
+    font-size: 14px;
+    color: white;
+
+    width: $mainWidth;
+    margin: 0 auto;
+  }
+
+  span {
+    font-weight: 700; //negrita a la autoría
+  }
+}
