@@ -5,7 +5,8 @@ header, header div, body > nav > ul, #webInfo, section:not(#webInfo) div, footer
   justify-content: space-between;
   align-items: center; }
 
-#signup, #seeAll, .submit {
+#signup, #seeAll, .submit, #signup_main input[type="submit"],
+#signup_main input[type="button"] {
   background: #3672b3;
   color: white;
   border-radius: 4px;
@@ -460,9 +461,9 @@ section:not(#webInfo) {
     margin: -10px auto 35px; }
   section:not(#webInfo) div {
     align-items: flex-start; }
-  section:not(#webInfo) figure {
+  section:not(#webInfo) article {
     width: 256px; }
-    section:not(#webInfo) figure p {
+    section:not(#webInfo) article p {
       text-align: left;
       margin: 6px 0; }
   section:not(#webInfo) img {
@@ -535,11 +536,11 @@ section:not(#webInfo) {
   -o-transition: 0.15s;
   /*compatibilidad con versiones anteriores de Opera*/ }
 
-aside {
+aside:not(#signup_aside) {
   background-color: #1abc9c;
   text-align: center;
   padding: 49.5px 0; }
-  aside p {
+  aside:not(#signup_aside) p {
     width: 460px;
     margin: 0 auto 20px;
     color: white;
@@ -627,6 +628,145 @@ footer {
   footer span {
     font-weight: 700; }
 
+#signup_main figure {
+  height: 500px;
+  width: 100%;
+  line-height: 500px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px; }
+
+#signup_main img {
+  width: 100%;
+  height: 100.5%;
+  position: relative;
+  object-fit: cover;
+  vertical-align: middle; }
+
+#signup_main h2 {
+  font-size: 26px;
+  font-weight: 300;
+  color: #19226d;
+  margin: 50px auto 25px;
+  text-align: center; }
+
+#signup_main form {
+  display: flex;
+  /*se asigna un diseño flexbox al elemento*/
+  flex-direction: column;
+  /*se distribuyen los elementos verticalmente*/
+  width: 960px;
+  /*anchura del formulario*/
+  margin: 0 auto;
+  /*los márgenes automáticos permiten, entre otras cosas, centrar el contenido*/ }
+  #signup_main form > div {
+    display: flex;
+    /*se asigna un diseño flexbox al elemento*/
+    flex-direction: row;
+    /*se distribuyen los elementos horizontalmente*/
+    justify-content: space-between;
+    /*los elementos son distanciados unos de otros tanto como la anchura lo permite*/ }
+
+#signup_main .form-submit {
+  display: flex;
+  /*se asigna un diseño flexbox al elemento*/
+  flex-direction: column;
+  /*se distribuyen los elementos verticalmente*/
+  margin: 50px auto 70px; }
+
+#signup_main input {
+  margin: 5px auto;
+  border-radius: 4px;
+  padding: 0 10px;
+  height: 45px;
+  width: 250px;
+  color: #555555; }
+
+#signup_main input[type="submit"],
+#signup_main input[type="button"] {
+  width: 272px;
+  transition: 0.15s;
+  /*animación de la duración especificada dada al asociar o reasociar al elemento las propiedades que lo definen*/
+  -webkit-transition: 0.15s;
+  /*compatibilidad con versiones anteriores de Chrome y Safari*/
+  -moz-transition: 0.15s;
+  /*compatibilidad con versiones anteriores de Firefox*/
+  -o-transition: 0.15s;
+  /*compatibilidad con versiones anteriores de Opera*/
+  cursor: pointer; }
+
+#signup_main input[type="submit"]:hover,
+#signup_main input[type="button"]:hover {
+  background: #19226d;
+  border: 1px solid #19226d;
+  transition: 0.15s;
+  /*animación de la duración especificada dada al asociar o reasociar al elemento las propiedades que lo definen*/
+  -webkit-transition: 0.15s;
+  /*compatibilidad con versiones anteriores de Chrome y Safari*/
+  -moz-transition: 0.15s;
+  /*compatibilidad con versiones anteriores de Firefox*/
+  -o-transition: 0.15s;
+  /*compatibilidad con versiones anteriores de Opera*/
+  cursor: pointer; }
+
+#signup_main ul {
+  background-color: #fffab4;
+  margin: 0;
+  padding: 0; }
+  #signup_main ul li {
+    text-align: center;
+    display: none;
+    margin: 0;
+    padding: 15px; }
+  #signup_main ul li:not(#correct) {
+    border-top: 1px solid orange; }
+
+.form-group {
+  display: flex;
+  /*se asigna un diseño flexbox al elemento*/
+  flex-direction: column;
+  /*se distribuyen los elementos horizontalmente*/ }
+
+.form-group:not(:first-child) {
+  margin-top: 15px; }
+
+.form-error label {
+  color: red; }
+
+.form-error input {
+  border-color: red;
+  background-color: #ffc8c8;
+  color: #555555; }
+
+#correct {
+  background-color: #b9ffb9;
+  border-top: 1px solid green; }
+
+#signup_aside {
+  background-color: #1abc9c;
+  padding: 20px 0 40px;
+  display: flex;
+  /*se asigna un diseño flexbox al elemento*/
+  flex-direction: column;
+  /*se distribuyen los elementos verticalmente*/
+  /*p {
+    margin: 40px 0 -40px;
+    background-color: rgb(255, 250, 180);
+    display: none;
+  }*/ }
+  #signup_aside h2 {
+    margin-top: 0; }
+  #signup_aside input {
+    margin: 0 auto; }
+  #signup_aside div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+  #signup_aside img {
+    margin: 40px 15px 0px;
+    display: none; }
+
 @media only screen and (max-width: 1919px) {
   header,
   #webInfo,
@@ -634,7 +774,7 @@ footer {
   footer nav > ul,
   footer p {
     width: 960px; }
-  section:not(#webInfo) figure,
+  section:not(#webInfo) article,
   footer nav > ul > li {
     width: 216px; }
   body > nav > ul {
@@ -655,7 +795,7 @@ footer {
     height: 112px;
     width: 80%;
     margin: 10px auto; }
-    header figure {
+    header img {
       margin-top: 5px;
       margin-right: 20px; }
   .fa-hamburger {
@@ -695,13 +835,13 @@ footer {
   footer nav > ul {
     flex-direction: row;
     flex-wrap: wrap; }
-  section:not(#webInfo) figure,
+  section:not(#webInfo) article,
   footer nav > ul > li {
     width: 45%;
     /* Anchura de cada par de items */ }
   section:not(#webInfo) {
     width: 80%; }
-    section:not(#webInfo) figure:nth-last-child(-n + 2) {
+    section:not(#webInfo) article:nth-last-child(-n + 2) {
       margin-top: 20px; }
   footer {
     text-align: center; }
@@ -728,12 +868,12 @@ footer {
       padding-top: 20px; }
   section:not(#webInfo) h2 {
     margin-top: 80px; }
-  section:not(#webInfo) figure:nth-last-child(-n + 3) {
+  section:not(#webInfo) article:nth-last-child(-n + 3) {
     margin-top: 50px; }
   section:not(#webInfo) div,
   footer nav > ul {
     flex-direction: column; }
-  section:not(#webInfo) figure,
+  section:not(#webInfo) article,
   footer nav > ul > li {
     width: 100%; }
   aside p {

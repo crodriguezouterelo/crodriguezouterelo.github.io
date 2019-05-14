@@ -1,0 +1,75 @@
+.fa-hamburger,
+#toggle {
+  display: none;
+}
+
+.fa-hamburger {
+  font-size: 40px;
+  margin: 0 auto;
+  padding: 10px 0;
+  color: white;
+  cursor: pointer;
+  @include transition(0.1s);
+}
+
+.fa-hamburger:hover {
+  @include scale(1.1);
+  @include transition(0.1s);
+}
+
+body > nav {
+  border-top: 1px solid rgb(221, 221, 221);
+  text-align: center;
+
+  a {
+    color: $grisMenu;
+    font-size: 16px;
+  }
+
+  > ul {
+    @extend %xflex;
+    width: $mainWidth;
+    margin: 0 auto;
+
+    > li:hover {
+      > a {
+        color: $azulMedio;
+      }
+
+      .subnav {
+        display: block;
+      }
+    }
+  }
+
+  li {
+    padding: 18px 15px; // Espaciado para los elementos de la barra de navegación
+  }
+}
+
+.subnav {
+  display: none;
+  position: absolute;
+  z-index: 2;
+
+  background-color: white;
+  margin: 18px 0 0 -25px;
+
+  ul {
+    float: left;
+  }
+
+  ul li {
+    display: block;
+    padding: 10px 25px;
+    position: relative;
+  }
+
+  ul li:hover {
+    @include transition();
+    background-color: $azulMedio;
+    a {
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+header {
+  @extend %xflex;
+  width: $mainWidth;
+  height: 56px;
+  margin: 5px auto;
+  text-align: center;
+  div {
+    @extend %xflex;
+    width: 290px;
+  }
+}
+
+#logo {
+  height: 39px;
+  @include transition();
+}
+
+#cart:hover,
+#logo:hover {
+  @include scale(1.1);
+  @include transition();
+}
+
+#login {
+  color: $azulOscuro;
+  font-size: 15.5px;
+  font-weight: 700;
+}
+
+#login:hover {
+  color: white;
+  @include coolShadow($azulOscuro);
+}
+
+#signup {
+  @extend %blueSquare;
+  @include transition(0.1s);
+}
+
+#signup:hover {
+  background-color: $azulClaro;
+  color: $azulOscuro;
+  border: 1px solid $azulOscuro;
+  @include transition(0.1s);
+}
+
+#cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $azulOscuro;
+  @include transition();
+  p {
+    margin: 0;
+    font-size: 12px;
+  }
+}
+
+.fa-shopping-cart {
+  font-size: 21px;
+  margin-bottom: 4px;
+}
