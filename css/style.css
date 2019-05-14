@@ -853,9 +853,8 @@ footer {
   #signup_aside > div {
     flex-direction: column;
     /*se distribuyen los elementos verticalmente*/ }
-  .form-group {
-    width: 250px;
-    margin: 0 auto; }
+  .form-group label {
+    text-align: center; }
   .form-group:first-child {
     margin-top: 15px; }
   #signup_main h2 {
