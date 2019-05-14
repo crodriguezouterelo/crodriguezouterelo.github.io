@@ -631,10 +631,11 @@ footer {
 #signup_main figure {
   height: 500px;
   width: 100%;
+  max-width: 1920px;
   line-height: 500px;
   overflow: hidden;
   position: relative;
-  margin-bottom: 30px; }
+  margin: 0 auto 30px; }
 
 #signup_main img {
   width: 100%;
@@ -847,7 +848,18 @@ footer {
     text-align: center; }
     footer p {
       width: 80%;
-      margin: 0 auto; } }
+      margin: 0 auto; }
+  #signup_main form > div,
+  #signup_aside > div {
+    flex-direction: column;
+    /*se distribuyen los elementos verticalmente*/ }
+  .form-group {
+    width: 250px;
+    margin: 0 auto; }
+  .form-group:first-child {
+    margin-top: 15px; }
+  #signup_main h2 {
+    margin-bottom: 10px; } }
 
 @media only screen and (max-width: 600px) {
   .captionHolder {
