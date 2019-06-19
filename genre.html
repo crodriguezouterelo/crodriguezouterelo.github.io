@@ -10,7 +10,7 @@
     <title>UOCFLIX | Genre Page</title>
 
     <!-- Aquí se debe escribir una descripción del contenido del documento -->
-    <meta name="description" content="Hello there" />
+    <meta name="description" content="Results for the selected genre" />
 
     <!-- Se desactiva el zoom-out dado en dispositivos móviles para un correcto diseño adaptativo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -108,8 +108,10 @@
   <body>
     <!-- Etiqueta semántica de encabezado, concebido estructuralmente como navbar -->
     <header class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-brand">
+      <div class="container d-flex flex-column flex-sm-row">
+        <div
+          class="navbar-brand d-flex flex-row justify-content-start align-items-center"
+        >
           <a href="index.html"
             ><img src="/imgs/logo1.svg" id="logo" alt="App Logo"
           /></a>
@@ -117,8 +119,24 @@
             ><img src="/imgs/imago.svg" id="imago" alt="App Logo"
           /></a>
           <h1>UOCFLIX</h1>
+          <div class="d-flex flex-row justify-content-end align-items-center">
+            <div class="toggle-container">
+              <div class="toggle-btn">
+                <div class="inner-circle"></div>
+              </div>
+            </div>
+            <div
+              class="toggle-modes d-flex flex-column justify-content-between"
+            >
+              <p>Movies</p>
+              <p>TV Shows</p>
+            </div>
+          </div>
         </div>
-        <form class="form-inline" id="searchForm">
+        <form
+          class="form-inline d-flex flex-column flex-sm-row"
+          id="searchForm"
+        >
           <input
             class="form-control mr-sm-2"
             id="searchText"

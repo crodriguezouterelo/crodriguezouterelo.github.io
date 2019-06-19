@@ -582,12 +582,12 @@ function getMovieInfo(id) {
                     <p class="col-12">More Information available at:</p>
                     <div class="col-12 d-flex .flex-md-row justify-content-center">
                       <img src="/imgs/imdb.png" class="mdb"
-                      onclick = "window.open('https://www.imdb.com/title/${
-                        movie.imdb_id
-                      }', '_blank');"></img>
+                      onclick = "window.open('https://www.imdb.com/find?ref_=nv_sr_fn&q=${
+                        movie.name
+                      }&s=all', '_blank');"></img>
 
                       <img src="/imgs/tmdb.png" class="mdb"
-                      onclick = "window.open('https://www.themoviedb.org/movie/${
+                      onclick = "window.open('https://www.themoviedb.org/tv/${
                         movie.id
                       }', '_blank');"></img>
                     </div>

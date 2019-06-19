@@ -10,7 +10,10 @@
     <title>UOCFLIX | Genres</title>
 
     <!-- Aquí se debe escribir una descripción del contenido del documento -->
-    <meta name="description" content="Hello there" />
+    <meta
+      name="description"
+      content="List of the genres available on the platform"
+    />
 
     <!-- Se desactiva el zoom-out dado en dispositivos móviles para un correcto diseño adaptativo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -108,7 +111,7 @@
   <body>
     <!-- Etiqueta semántica de encabezado, concebido estructuralmente como navbar -->
     <header class="navbar navbar-default">
-      <div class="container">
+      <div class="container d-flex flex-column flex-sm-row">
         <div
           class="navbar-brand d-flex flex-row justify-content-start align-items-center"
         >
@@ -133,7 +136,10 @@
             </div>
           </div>
         </div>
-        <form class="form-inline" id="searchForm">
+        <form
+          class="form-inline d-flex flex-column flex-sm-row"
+          id="searchForm"
+        >
           <input
             class="form-control mr-sm-2"
             id="searchText"
