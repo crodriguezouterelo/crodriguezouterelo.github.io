@@ -7,13 +7,10 @@
     <meta charset="UTF-8" />
 
     <!-- Aquí se debe escribir un título apropiado al contenido del documento -->
-    <title>UOCFLIX | Index</title>
+    <title>UOCFLIX | Search</title>
 
     <!-- Aquí se debe escribir una descripción del contenido del documento -->
-    <meta
-      name="description"
-      content="Index of the UOCFLIX, your favourite movie database"
-    />
+    <meta name="description" content="Hello there" />
 
     <!-- Se desactiva el zoom-out dado en dispositivos móviles para un correcto diseño adaptativo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -111,7 +108,7 @@
   <body>
     <!-- Etiqueta semántica de encabezado, concebido estructuralmente como navbar -->
     <header class="navbar navbar-default">
-      <div class="container d-flex flex-column flex-sm-row">
+      <div class="container">
         <div
           class="navbar-brand d-flex flex-row justify-content-start align-items-center"
         >
@@ -136,10 +133,7 @@
             </div>
           </div>
         </div>
-        <form
-          class="form-inline d-flex flex-column flex-sm-row"
-          id="searchForm"
-        >
+        <form class="form-inline" id="searchForm">
           <input
             class="form-control mr-sm-2"
             id="searchText"
@@ -166,10 +160,7 @@
 
           <div class="navbar-collapse collapse">
             <ul class="navbar-nav list-inline">
-              <li
-                onclick="location.href='index.html'"
-                class="list-inline-item active"
-              >
+              <li onclick="location.href='index.html'" class="list-inline-item">
                 Index
               </li>
               <li
@@ -203,8 +194,8 @@
                 By Genre
               </li>
               <!--<li onclick="location.href='movie.html'" class="list-inline-item">
-                Latest
-              </li>-->
+                  Latest
+                </li>-->
               <li class="list-inline-item">About Us</li>
             </ul>
           </div>
@@ -224,19 +215,9 @@
     <img id="loading" src="imgs/ajax-loader.gif" alt="Loading GIF" />
 
     <main class="container">
-      <div class="jumbotron catalogue">
-        <div>
-          <a href="nowplaying.html"><h2 class="deckTitle">Now Playing</h2></a>
-          <div id="index_nowplaying" class="row deck"></div>
-        </div>
-        <div>
-          <a href="trending.html"><h2 class="deckTitle">Trending</h2></a>
-          <div id="index_trending" class="row deck"></div>
-        </div>
-        <div>
-          <a href="toprated.html"><h2 class="deckTitle">Top Rated</h2></a>
-          <div id="index_toprated" class="row deck"></div>
-        </div>
+      <div class="jumbotron">
+        <h2></h2>
+        <div id="movies" class="row deck"></div>
       </div>
     </main>
 
@@ -247,7 +228,6 @@
       </p>
     </footer>
   </body>
-
   <!-- Se importa jQuery+jQueryUI en el proyecto -->
   <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -304,20 +284,12 @@
       $("#controllerGrid").removeClass("active");
     }
 
-    page = 1;
-
-    function index() {
-      nowplaying(page, 4, "#index_nowplaying");
-      trending(page, 4, "#index_trending");
-      toprated(page, 4, "#index_toprated");
-    }
-
-    index();
+    search(sessionStorage.getItem("searchText"));
 
     $(".toggle-btn").on("click", function() {
       $(".toggle-btn").toggleClass("active");
       checkToggle();
-      index();
+      search(sessionStorage.getItem("searchText"));
     });
   </script>
 </html>
